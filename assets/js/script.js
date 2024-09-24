@@ -1,44 +1,44 @@
 class Multimedia {
-  constructor(url) {
-      let _url = url; 
-      
-      this.getUrl = function() {
-          return _url;
-      };
-  }
+    constructor(url) {
+        let _url = url;
 
-  setInicio() {
-      return "Este método es para realizar un cambio en la URL del video.";
-  }
+        this.getUrl = function () {
+            return _url;
+        };
+    }
+
+    setInicio() {
+        return "Este método es para realizar un cambio en la URL del video.";
+    }
 }
 
 class Reproductor extends Multimedia {
-  constructor(url, id) {
-      super(url);
-      this.id = id; 
-  }
+    constructor(url, id) {
+        super(url);
+        this.id = id;
+    }
 
-  playMultimedia() {
-      multimediaModule.play(this.getUrl(), this.id);
-  }
+    playMultimedia() {
+        multimediaModule.play(this.getUrl(), this.id);
+    }
 
-  setInicio(tiempo) {
-      const urlConTiempo = `${this.getUrl()}?start=${tiempo}`;
-      document.getElementById(this.id).setAttribute('src', urlConTiempo);
-  }
+    setInicio(tiempo) {
+        const urlConTiempo = `${this.getUrl()}?start=${tiempo}`;
+        document.getElementById(this.id).setAttribute('src', urlConTiempo);
+    }
 }
-const multimediaModule = (function() {
-  const setUrl = (url, id) => {
-      const iframe = document.getElementById(id);
-      iframe.setAttribute('src', url);
-  };
+const multimediaModule = (function () {
+    const setUrl = (url, id) => {
+        const iframe = document.getElementById(id);
+        iframe.setAttribute('src', url);
+    };
 
-  
-  return {
-      play: (url, id) => {
-          setUrl(url, id);
-      }
-  };
+
+    return {
+        play: (url, id) => {
+            setUrl(url, id);
+        }
+    };
 })();
 
 const musica = new Reproductor('https://www.youtube.com/embed/jRuXTUwOfoQ', 'musica');

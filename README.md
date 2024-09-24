@@ -1,0 +1,1 @@
+Esta implementación utiliza técnicas modernas de JavaScript para gestionar la reproducción de videos de manera dinámica y eficiente.  Para mejor visualización ingresa al siguiente link:https://gabypenalver.github.io/SugerenciaDeVideos/
